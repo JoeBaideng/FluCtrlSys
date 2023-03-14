@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
+#include"serialcontrol.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -17,5 +17,6 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    SerialControl serial_control_;
 };
 #endif // MAINWINDOW_H

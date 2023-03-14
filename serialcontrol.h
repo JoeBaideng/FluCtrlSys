@@ -10,32 +10,32 @@
 #include<QLabel>
 #include<QAction>
 #include<QTimer>
+#include<QObject>
+#include"serialparameter.h"
 
-//串口控制量
-struct SerialSet
-{
-    QString port_name;//串口名
-    QString baud_rate;//波特率
-    QString data_bit;//数据位
-    QString stop_bit;//停止位
-    int parity_check;//奇偶校验
-    QString flu_control;//流控制
-};
 /*
  * SerialControl对串口进行控制以及串口数据的收发
  *
  * */
-class SerialControl
+class SerialControl :public QObject
 {
+    Q_OBJECT
 public:
     SerialControl();
 private:
     QSerialPort*serial_port_;
     SerialSet serial_set_;
+    QStringList port_name_list;
 
 
 private:
+    void InitSerial();
+public:
     bool IsOpened();
+    void OpenDialog();
+    bool OpenSerialPort();
+    void CloseSerialPort();
+    void SendData(const QString data);
 };
 
 #endif // SERIALCONTROL_H
