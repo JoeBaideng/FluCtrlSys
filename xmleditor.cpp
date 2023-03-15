@@ -55,6 +55,7 @@ EOCMap XmlEditor::ReadFile(QString path)
                 eoc_map.order_code_map.insert(order_name,order_code);//将命令名称与代码一一对应，生成o_c图
 
             }
+            eoc_map.equip_names.push_back(equip_name);
             eoc_map.equip_orders_map.insert(equip_name,order_list_str);//将设备名与该设备的命令列表对应
         }
     }

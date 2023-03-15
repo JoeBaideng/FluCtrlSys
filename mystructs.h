@@ -21,6 +21,7 @@ struct SerialSet
 //设备-命令以及命令-代码的k-v图，这种对应关系会在装载下拉框选项中用到
 struct EOCMap
 {
+    QStringList equip_names;
     QMap<QString,QStringList> equip_orders_map;
     QMap<QString,QString> order_code_map;
 };

@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     EOCMap eoc_map=xml_editor.ReadFile("template.xml");
+    qDebug()<<eoc_map.equip_names;
     qDebug()<<eoc_map.equip_orders_map;
     qDebug()<<eoc_map.order_code_map;
 //    serial_control_.OpenDialog();
