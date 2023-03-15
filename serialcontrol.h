@@ -11,7 +11,7 @@
 #include<QAction>
 #include<QTimer>
 #include<QObject>
-#include"serialparameter.h"
+#include"mystructs.h"
 
 /*
  * SerialControl对串口进行控制以及串口数据的收发
@@ -36,6 +36,7 @@ public:
     bool OpenSerialPort();
     void CloseSerialPort();
     void SendData(const QString data);
+    QString ReadData();
 };
 
 #endif // SERIALCONTROL_H

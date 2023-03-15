@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include"serialcontrol.h"
+#include"xmleditor.h"
+#include"mystructs.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -18,5 +20,6 @@ public:
 private:
     Ui::MainWindow *ui;
     SerialControl serial_control_;
+    XmlEditor xml_editor;
 };
 #endif // MAINWINDOW_H

@@ -2,7 +2,7 @@
 #define DIALOG_H
 
 #include <QDialog>
-#include"serialparameter.h"
+#include"mystructs.h"
 namespace Ui {
 class SerialDlg;
 }

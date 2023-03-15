@@ -1,4 +1,4 @@
-QT       += core gui serialport
+QT       += core gui serialport xml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -19,13 +19,15 @@ SOURCES += \
     dialog.cpp \
     main.cpp \
     mainwindow.cpp \
-    serialcontrol.cpp
+    serialcontrol.cpp \
+    xmleditor.cpp
 
 HEADERS += \
     dialog.h \
     mainwindow.h \
+    mystructs.h \
     serialcontrol.h \
-    serialparameter.h
+    xmleditor.h
 
 FORMS += \
     dialog.ui \

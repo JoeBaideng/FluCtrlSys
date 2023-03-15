@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<System>
+	<Equipment name="注射泵">
+		<Order name="抽取液体" code="CC 00 43 80 25 00 00 DD 91 02"></Order>
+		<Order name="排出液体" code="CC 00 42 80 25 00 00 DD 90 02"></Order>
+		<Order name="最优路径" code="CC 00 44 00 00 00 00 DD ED 01"></Order>
+	</Equipment>
+	<Equipment name="蠕动泵">
+		<Order name="设置当前转速" code="01 06 00 02 01 2C 28 47"></Order>
+		<Order name="关闭" code="01 06 00 00 00 01 48 0A"></Order>
+		<Order name="开启" code="01 06 00 01 00 00 48 0A"></Order>
+	</Equipment>
+</System>
