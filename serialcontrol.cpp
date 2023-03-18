@@ -138,6 +138,12 @@ void SerialControl::SendData(const QString data)
     qDebug()<<send_data;
 }
 
+//刷新设备列表
+void SerialControl::RefreshDeviceList()
+{
+    InitSerial();
+}
+
 QString SerialControl::ReadData()
 {
     QByteArray byte_data = serial_port_->readAll();
@@ -146,5 +152,6 @@ QString SerialControl::ReadData()
     //将数据转换为hex格式并以空格分隔->去掉头尾空白字符->转换为大写形式
     QString frame_data;
     frame_data.prepend(byte_data.toHex());
+    qDebug()<<frame_data;
     return frame_data;
 }

@@ -36,6 +36,7 @@ public:
     bool OpenSerialPort();
     void CloseSerialPort();
     void SendData(const QString data);
+    void RefreshDeviceList();
     QString ReadData();
 };
 

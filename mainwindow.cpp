@@ -10,16 +10,27 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    EOCMap eoc_map=xml_editor.ReadFile("template.xml");
-    qDebug()<<eoc_map.equip_names;
-    qDebug()<<eoc_map.equip_orders_map;
-    qDebug()<<eoc_map.order_code_map;
-//    serial_control_.OpenDialog();
-//    serial_control_.CloseSerialPort();
+//    EOCMap eoc_map=xml_editor.ReadFile("template.xml");
+//    qDebug()<<eoc_map.equip_names;
+//    qDebug()<<eoc_map.equip_orders_map;
+//    qDebug()<<eoc_map.order_code_map;
+
+    //serial_control_.CloseSerialPort();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+    serial_control_.CloseSerialPort();
 }
 
+
+void MainWindow::on_refresh_clicked()
+{
+    serial_control_.RefreshDeviceList();
+}
+
+void MainWindow::on_open_clicked()
+{
+    serial_control_.OpenDialog();
+}
