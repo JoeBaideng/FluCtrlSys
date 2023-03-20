@@ -16,16 +16,24 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    delegates/combodelegate.cpp \
+    delegates/readonlydelegate.cpp \
+    delegates/spindelegate.cpp \
     dialog.cpp \
     main.cpp \
     mainwindow.cpp \
+    selectionview.cpp \
     serialcontrol.cpp \
     xmleditor.cpp
 
 HEADERS += \
+    delegates/combodelegate.h \
+    delegates/readonlydelegate.h \
+    delegates/spindelegate.h \
     dialog.h \
     mainwindow.h \
     mystructs.h \
+    selectionview.h \
     serialcontrol.h \
     xmleditor.h
 

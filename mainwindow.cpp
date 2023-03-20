@@ -10,6 +10,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QStringList headers;
+    headers<<"模块"<<"命令"<<"参数设置"<<"时间"<<"故障检查"<<"备注"<<"执行进度";
+    ui->selection_view->SetHeaders(headers);
+
 //    EOCMap eoc_map=xml_editor.ReadFile("template.xml");
 //    qDebug()<<eoc_map.equip_names;
 //    qDebug()<<eoc_map.equip_orders_map;
@@ -25,12 +29,4 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::on_refresh_clicked()
-{
-    serial_control_.RefreshDeviceList();
-}
 
-void MainWindow::on_open_clicked()
-{
-    serial_control_.OpenDialog();
-}

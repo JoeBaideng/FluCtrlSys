@@ -18,9 +18,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_refresh_clicked();
 
-    void on_open_clicked();
 
 private:
     Ui::MainWindow *ui;
