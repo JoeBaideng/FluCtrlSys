@@ -12,8 +12,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     QStringList headers;
     headers<<"模块"<<"命令"<<"参数设置"<<"时间"<<"故障检查"<<"备注"<<"执行进度";
+    EOCMap eoc_map=xml_editor.ReadFile("template.xml");
     ui->selection_view->SetHeaders(headers);
-
+    ui->selection_view->InitView(eoc_map);
 //    EOCMap eoc_map=xml_editor.ReadFile("template.xml");
 //    qDebug()<<eoc_map.equip_names;
 //    qDebug()<<eoc_map.equip_orders_map;
