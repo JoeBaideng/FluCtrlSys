@@ -10,8 +10,8 @@ class ComboDelegate:public QStyledItemDelegate
 {
     Q_OBJECT
 public:
-    ComboDelegate(QObject*parent=0);
-    ComboDelegate(QStringList strList,QObject*parent=0);
+    ComboDelegate(QObject*parent=0,QAbstractItemModel *model=nullptr);
+    ComboDelegate(QStringList strList,QObject*parent,QAbstractItemModel *model=nullptr);
     QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const ;
     void setEditorData(QWidget *editor, const QModelIndex &index) const ;
     void setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const ;
@@ -19,6 +19,7 @@ public:
     void setComboItems(QStringList list);
 private:
     QStringList _strList;
+    QAbstractItemModel *_model;
 };
 
 #endif // COMBODELEGATE1_H

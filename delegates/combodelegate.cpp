@@ -1,20 +1,27 @@
 #include "combodelegate.h"
 #include<QComboBox>
+#include<QLineEdit>
+#include<QListView>
 /*
  * 下拉框代理
  * */
-ComboDelegate::ComboDelegate(QObject *parent)
+ComboDelegate::ComboDelegate(QObject *parent,QAbstractItemModel *model):QStyledItemDelegate(parent),_model(model)
 {
 
 }
 /*************可以通过构造函数初始化下拉框列表*************/
-ComboDelegate::ComboDelegate(QStringList strList,QObject*parent):QStyledItemDelegate(parent)
+ComboDelegate::ComboDelegate(QStringList strList,QObject*parent,QAbstractItemModel *model):QStyledItemDelegate(parent),_model(model)
 {
     _strList=strList;
 }
 QWidget *ComboDelegate:: createEditor(QWidget *parent, const QStyleOptionViewItem &/*option*/, const QModelIndex &/*index*/)const
 {
     QComboBox*editor=new QComboBox(parent);
+    // 将编辑模式设置为 InstantPopup
+    editor->setEditable(true);
+    editor->lineEdit()->setReadOnly(true);
+//    editor->setView(new QListView(editor));
+//    editor->setModel(_model);
     editor->addItems(_strList);
     editor->installEventFilter(const_cast<ComboDelegate*>(this));
     return editor;

@@ -17,6 +17,7 @@ public:
     void SetHeaders(const QStringList headers);
     void SetRowCount(int count);
     void InitView(EOCMap map);
+    QString GetData(const int row,const int col);
 private:
     EOCMap eoc_map_;
     QStandardItemModel *model;
@@ -26,6 +27,8 @@ private:
     SpinDelegate*spin_dele;
 private:
 
+private slots:
+    void OnDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QVector<int> &roles);
 };
 
 #endif // SELECTIONVIEW_H
