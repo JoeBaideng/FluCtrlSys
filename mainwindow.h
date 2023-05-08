@@ -20,6 +20,14 @@ public:
 private slots:
 
 
+    void on_btn_send_1_clicked();
+
+    void on_action_close_serial_triggered();
+
+    void on_action_open_dlg_triggered();
+
+    void on_act_refresh_serial_triggered();
+
 private:
     Ui::MainWindow *ui;
     SerialControl serial_control_;

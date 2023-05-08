@@ -18,6 +18,7 @@ public:
     void SetRowCount(int count);
     void InitView(EOCMap map);
     QString GetData(const int row,const int col);
+    QList<QPair<QString,float>> GetCodeAndTime();
 private:
     EOCMap eoc_map_;
     QStandardItemModel *model;
@@ -26,7 +27,9 @@ private:
     ReadOnlyDelegate*read_only_dele;
     SpinDelegate*spin_dele;
 private:
-
+    bool RowFull(int row);
+    QString Invert_16(QString a);
+    void GetIdentifyingCode(QString &inst_code);
 private slots:
     void OnDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QVector<int> &roles);
 };
